@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blog</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+<h1>
+    Editar Post:
+</h1>
+
+<form method="post" action="/posts/<%= post.id %>?_method=PUT" enctype="multipart/form-data" >
+    <%- include('_form.ejs') %>
+</form>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blog de Javi</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+    <br>
+
+    <table>
+        <tr>
+            <td >
+                <% var attachment = post.attachment; %>
+
+                <% if (attachment) { %>
+
+                    <% if (attachment.mime === "image/jpeg" ||
+                            attachment.mime === "image/gif" ||
+                            attachment.mime === "image/jpg" ||
+                            attachment.mime === "image/png" ||
+                            attachment.mime === "image/gif") { %>
+
+                        <img  src="/posts/<%= post.id %>/attachment" width="200px" height="150px"/>
+
+                    <% } else if (attachment.mime === "video/mp4") { %>
+
+                        <video controls><source src="/posts/<%= post.id %>/attachment"></video>
+
+                    <% } else if (attachment.mime === "application/pdf") { %>
+
+                        <img  src="/images/pdf.png" width="200px" height="150px"/>
+
+                    <% } else { %>
+
+                        <img src="/images/doc.png" width="200px" height="150px"/>
+
+                    <% } %>
+                <% } else { %>
+                    <img src="/images/none.png" width="200px" height="150px"/>
+                <% } %>
+            </td>
+        </tr>
+        <tr>
+            <td >
+                <p s></p> Post id: <%= post.id %> - <b><%= post.title %></b> </p>
+            </td>
+        </tr>
+        <tr>
+            <td >
+                <p > <%= post.body %> </p>
+            </td>
+        </tr>              
+    </table>
+    <a href="/posts" >Go back</a>
+    <a href="/posts/<%= post.id %>/attachment" >Ver Attachment</a>
+</body>
+</html>
+
+    

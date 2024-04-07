@@ -1,0 +1,27 @@
+
+<div >
+    <label>Título:</label>
+    <input name="title" value="<%= post.title %>" placeholder="Title" autocomplete="off" required />
+</div>
+
+
+<div>
+    <p><label for="Body">Body:</label></p>
+    <textarea id="body" name="body"><%= post.body %></textarea>
+</div>
+
+<div>
+    <br>
+    <label for="img">Attachment (Max 2MB):</label>
+    <input type="file" id="img" name="image"/>
+    <br>
+</div>
+
+
+<input type="submit" value="Save">
+
+<br/>
+
+<a href="/posts" class="button">Cancel</a>
+
+

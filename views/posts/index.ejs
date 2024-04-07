@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blog</title>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+</head>
+<body>
+<h1>Todos los Posts:</h1>
+<table>
+    <% for (let post of posts) { %>
+        <tr>
+            <td>
+                <%= post.id %>
+            </td>
+            <td>
+                <%= post.title %>
+            </td>
+            <td>
+                <a href="/posts/<%= post.id %>" >Show</a>
+            </td>
+            <td>
+                <a href="/posts/<%= post.id %>/edit" >Edit</a>
+            </td>
+            <td>
+                <a href="/posts/<%= post.id %>?_method=DELETE"
+                   onClick="return confirm('Delete: <%= post.id %>');"
+                   >Delete</a>
+            </td>
+        </tr>
+    <% } %>
+</table>
+
+<a href="/posts/new" >Create New Post</a>
+</body>
+</html>
